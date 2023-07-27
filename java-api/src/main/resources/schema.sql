@@ -13,12 +13,4 @@ create table IF NOT EXISTS  dogs
     FOREIGN key (owner_id) REFERENCES owners (id)
 );
 
-INSERT into owners
-    (id,name)
-values
-    (1,'Bruce Wayne')
 
-INSERT into dogs
-    (id,name,age,owner_id)
-values
-    (1,'sir barksalot',2,1)
