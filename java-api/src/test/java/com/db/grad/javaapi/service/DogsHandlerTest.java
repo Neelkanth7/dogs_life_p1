@@ -27,4 +27,9 @@ public class DogsHandlerTest {
         long actualResult = cut.getNoOfDogs();
         assertEquals( expectedResult, actualResult );
     }
+
+    @Test
+    public void add_several_dogs_return_number_of_dogs_match_number_added(){
+
+    }
 }
