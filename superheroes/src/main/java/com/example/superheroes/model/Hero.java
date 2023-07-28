@@ -18,7 +18,9 @@ public class Hero {
 
     private int teamid;
 
+    public Hero (){
 
+    }
     public Hero(int id, String name, String alias, String superpower, int teamid) {
         this.id = id;
         this.name = name;

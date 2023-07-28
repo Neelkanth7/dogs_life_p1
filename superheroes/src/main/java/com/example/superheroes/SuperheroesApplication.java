@@ -21,7 +21,8 @@ public class SuperheroesApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<Hero> heroes = heroRepository.findAll();
+		List<Hero> heroes = heroRepository.findHeroesNameStartingWithLetter("C%");
+		System.out.println(heroes.size());
 		for (Hero hero: heroes){
 			System.out.println(hero);
 		}
