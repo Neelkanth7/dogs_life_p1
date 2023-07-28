@@ -1,8 +1,16 @@
 package com.db.grad.javaapi.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
+//@Column
 public class Dog
 {
+
+    @Column
     private long id;
+    @Column
     private String name;
 
     public long getId() {
