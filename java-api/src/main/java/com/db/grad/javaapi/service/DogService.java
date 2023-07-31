@@ -2,18 +2,19 @@ package com.db.grad.javaapi.service;
 
 import com.db.grad.javaapi.model.Dog;
 import com.db.grad.javaapi.repository.DogsRepository;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-
-@SpringBootApplication
+@Service
 public class DogService implements IDogsService
 {
     private DogsRepository itsDogsRepo;
 
-    public DogService(DogsRepository dogRepo )
+    @Autowired
+    public DogService( DogsRepository dogRepo )
     {
         itsDogsRepo = dogRepo;
     }
@@ -41,7 +42,7 @@ public class DogService implements IDogsService
     {
         boolean result = false;
 
-        Optional<Dog> theDog = Optional.ofNullable(itsDogsRepo.findById(uniqueId));
+        Optional<Dog> theDog = itsDogsRepo.findById(uniqueId);
         if(theDog.isPresent())
         {
             itsDogsRepo.delete(theDog.get());
