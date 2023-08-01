@@ -1,6 +1,8 @@
 import React from 'react'
 import HeroDetail from './HeroDetail'
 import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 const AllHeroes = () => {
 
     const heroes = 
@@ -18,13 +20,13 @@ const AllHeroes = () => {
             ]
 
             return (
-                <Row >
-                  {heroes.map(hero => (
-                      <div className='container' key={hero.id}>
-                        <HeroDetail info={hero}/>
-                      </div>
-                    ))}
-                </Row>
+                <Row>
+                {heroes.map(hero => (
+                  <Col xs={12} sm={6} md={4} lg={3} key={hero.id}>
+                    <HeroDetail info={hero} />
+                  </Col>
+                ))}
+              </Row>
               )}
 
 export default AllHeroes;
